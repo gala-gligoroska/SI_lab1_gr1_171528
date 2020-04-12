@@ -70,3 +70,25 @@ class Student {
         }
     }
 }
+
+class Course {
+    List<Student> listStudents = new ArrayList<>();
+
+    public Course(List<Student> listStudents) {
+        this.listStudents = listStudents;
+    }
+
+    public int prosekNaPoeni(int i){
+        return (int) this.listStudents.get(i).getAverage();
+    }
+
+    public int brojNaPotpisi(){
+        int count = 0;
+        for(int i=0; i<listStudents.size(); i++){
+            if(listStudents.get(i).hasSignature()){
+                count++;
+            }
+        }
+        return count;
+    }
+}
